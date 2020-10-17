@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Pessoa;
 
 class PessoaController extends Controller
 {
@@ -37,7 +38,7 @@ class PessoaController extends Controller
      */
     public function store(Request $request)
     {
-        $pessoa = new \App\Pessoa();
+        $pessoa = new pessoa();
         $pessoa->nome = $request->nome;
         $pessoa->telefone = $request->telefone;
         $pessoa->email = $request->email;
@@ -54,7 +55,7 @@ class PessoaController extends Controller
      */
     public function show($id)
     {
-        $pessoa = \App\Pessoa::find($id);
+        $pessoa = Pessoa::find($id);
         return view('pessoas.show',compact('pessoa'));
     }
 
@@ -66,7 +67,7 @@ class PessoaController extends Controller
      */
     public function edit($id)
     {
-        $pessoa = \App\Pessoa::find($id);
+        $pessoa = Pessoa::find($id);
         //dd($pessoa);
         return view('pessoas.form',compact('pessoa'));
     }
@@ -80,7 +81,7 @@ class PessoaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pessoa = \App\Pessoa::find($id);
+        $pessoa = Pessoa::find($id);
         $pessoa->nome = $request->nome;
         $pessoa->telefone = $request->telefone;
         $pessoa->email = $request->email;
@@ -98,7 +99,7 @@ class PessoaController extends Controller
     public function destroy($id)
     {
         //funcao para excluir
-        $pessoa = \App\Pessoa::find($id);
+        $pessoa = Pessoa::find($id);
         $pessoa->delete();
         return redirect('/pessoas');
 
