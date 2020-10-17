@@ -13,7 +13,10 @@ class PessoaController extends Controller
      */
     public function index()
     {
-        return view('pessoas.index');
+        //$pessoas = \App\Pessoa::all();
+        $pessoas = \App\Pessoa::paginate(10); //cria 10 pessoas por página
+        //dd($pessoas); //mostra o que está ocorrendo em pessoas
+        return view('pessoas.index',compact('pessoas'));
     }
 
     /**
