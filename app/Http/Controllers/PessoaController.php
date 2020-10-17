@@ -65,9 +65,9 @@ class PessoaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Pessoa $pessoa)
     {
-        $pessoa = Pessoa::find($id);
+        //$pessoa = Pessoa::find($id);
         //dd($pessoa);
         return view('pessoas.form',compact('pessoa'));
     }
@@ -79,9 +79,9 @@ class PessoaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Pessoa $pessoa)
     {
-        $pessoa = Pessoa::find($id);
+        //$pessoa = Pessoa::find($id);
         $pessoa->nome = $request->nome;
         $pessoa->telefone = $request->telefone;
         $pessoa->email = $request->email;
@@ -96,10 +96,10 @@ class PessoaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Pessoa $pessoa)
     {
         //funcao para excluir
-        $pessoa = Pessoa::find($id);
+        //$pessoa = Pessoa::find($id);
         $pessoa->delete();
         return redirect('/pessoas');
 
