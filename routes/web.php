@@ -21,3 +21,5 @@ Route::get('pessoas/create','PessoaController@create');
 Route::post('pessoas','PessoaController@store');
 Route::get('pessoas/{pessoa}/edit','PessoaController@edit'); //Está utilizando a função edit do PessoaController
 Route::put('pessoas/{pessoa}','PessoaController@update');
+Route::get('pessoas/{pessoa}','PessoaController@show');
+Route::delete('pessoas/{pessoa}','PessoaController@destroy');
