@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+/*
 Route::get('pessoas','PessoaController@index');
 Route::get('pessoas/create','PessoaController@create');
 Route::post('pessoas','PessoaController@store');
@@ -23,3 +24,5 @@ Route::get('pessoas/{pessoa}/edit','PessoaController@edit'); //Está utilizando 
 Route::put('pessoas/{pessoa}','PessoaController@update');
 Route::get('pessoas/{pessoa}','PessoaController@show');
 Route::delete('pessoas/{pessoa}','PessoaController@destroy');
+*/
+Route::resource('pessoas','PessoaController');
