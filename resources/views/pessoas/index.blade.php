@@ -1,5 +1,5 @@
 @extends('template.base')
-@section('titulo','Pessoas Cadastradas')
+
 @section('conteudo')
   <h1>Pessoas Cadastradas</h1>
   <a href="/pessoas/create">Novo Cadastro</a>
@@ -16,6 +16,7 @@
       <td>{{ $p->nome }}</td>
       <td>{{$p->telefone}}</td>
       <td>{{$p->email}} </td>
+      <td>{{$p->cpf}}</td>
       <td>
       <a href="/pessoas/{{$p->id}}/edit">Editar</a>
       <a href="/pessoas/{{$p->id}}">Excluir</a>

@@ -18,6 +18,7 @@
     @error('telefone')
       <small class='text-danger'>{{ $message }}</small>
     @enderror
+  <input class='form-control' type="text" name="cpf" placeholder="CPF" value="{{$pessoa->cpf ?? ''}}">
   <input class='form-control' type="email" name="email" placeholder="Email" value="{{$pessoa->email ?? ''}}">
   <input class='btn btn-primary' type="submit" value="Salvar">
   </form>

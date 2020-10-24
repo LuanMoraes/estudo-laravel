@@ -88,7 +88,7 @@ class PessoaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pessoa $pessoa)
+    public function update(StorePessoaPost $request, Pessoa $pessoa)
     {
         /*
         //$pessoa = Pessoa::find($id);
@@ -99,6 +99,7 @@ class PessoaController extends Controller
         $pessoa->save();
         */
         $pessoa->update($request->all());
+
         return redirect('/pessoas');
     }
 

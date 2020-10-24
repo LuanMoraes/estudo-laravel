@@ -25,7 +25,9 @@ class StorePessoaPost extends FormRequest
     public function rules()
     {
         return [
-        'nome'=>'required', 'telefone'=>'required'
+        'nome'=>'required', 
+        'telefone'=>'required',
+        'cpf'=>'digits:11|nullable'
         ];
     }
 }
