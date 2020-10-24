@@ -9,7 +9,6 @@
     <title>@yield('titulo')</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
     <style>
       h1{
         color:royalblue;
