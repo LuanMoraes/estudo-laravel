@@ -15,9 +15,9 @@
         <small class='text-danger'>{{ $message }}</small>
     @enderror
   <input class='form-control' type="text" name="telefone" placeholder="Telefone" value="{{$pessoa->telefone ?? ''}}"> {{--O required obriga o preenchimento do campo telefone--}}
-      @error('telefone')
+    @error('telefone')
       <small class='text-danger'>{{ $message }}</small>
-      @enderror
+    @enderror
   <input class='form-control' type="email" name="email" placeholder="Email" value="{{$pessoa->email ?? ''}}">
   <input class='btn btn-primary' type="submit" value="Salvar">
   </form>
