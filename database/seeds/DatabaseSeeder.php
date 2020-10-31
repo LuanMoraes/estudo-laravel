@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class DatabaseSeeder extends Seeder //executa todas as seeder do sistema
 {
     /**
      * Seed the application's database.
@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(UserSeeder::class);
+        $this->call(UserSeeder::class); 
+        $this->call(PessoaSeeder::class);
     }
 }
