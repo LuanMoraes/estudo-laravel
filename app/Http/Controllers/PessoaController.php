@@ -16,8 +16,11 @@ class PessoaController extends Controller
     public function index()
     {
         //$pessoas = \App\Pessoa::all();
-        $pessoas = \App\Pessoa::paginate(10); //cria 10 pessoas por página
+        //$pessoas = \App\Pessoa::paginate(10); //cria 10 pessoas por página
         //dd($pessoas); //mostra o que está ocorrendo em pessoas
+
+        $pessoas = auth()->user()->pessoas()->paginate(dd());
+
         return view('pessoas.index',compact('pessoas'));
     }
 
@@ -52,7 +55,15 @@ class PessoaController extends Controller
             'nome'=>'required', 'telefone'=>'required'
         ]);
         */
-        Pessoa::create($request->all());
+
+
+        //dd(auth()->user());
+
+
+        //Pessoa::create($request->all());
+        
+        auth()->user()->pessoas()->create($request->all());
+
         return redirect('/pessoas'); //voltando para a tela inicial
     }
 
